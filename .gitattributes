@@ -1,3 +1,4 @@
-*.rb linguist-languag=php
-
-client/stylesheets/* linguist-vendored
+*.php linguist-detectable=true
+*.js linguist-detectable=false
+*.css linguist-detectable=false
+*.xml linguist-detectable=false
