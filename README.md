@@ -43,3 +43,49 @@ $trcks_search = $result->tracks->results;`
         <?php } ?>
     <?php } ?>
 ```
+![alt text](img/result.PNG)
+
+Output of the account playlist
+
+
+get_user_likes.php
+
+
+```html
+$playlist = $client->usersPlaylistsList()
+
+```
+client.php
+
+
+```html
+ public function usersPlaylistsList() {
+        $url = $this->baseUrl."/users/".$this->account->uid."/playlists/list";
+
+        $response = json_decode($this->get($url))->result;
+
+        return $response;
+    }
+```
+
+
+wishlist.php
+
+
+```html
+foreach ($playlist as $track) {
+        ?>
+        <div style="margin-top: 20px">
+            <iframe frameborder="0" style="border:none;width:100%;height:450px;" width="100%" height="450"
+                    src="https://music.yandex.ru/iframe/#playlist/<?= $track->uid ?>/<?= $track->kind ?>">Слушайте <a
+                        href='https://music.yandex.ru/users/<?= $track->uid ?>/playlists/<?= $track->kind ?>'>test</a> — <a
+                        href='https://music.yandex.ru/users/<?= $track->uid ?>'><?= $_SESSION['logged_user']['email'] ?></a> на Яндекс
+                Музыке
+            </iframe>
+        </div>
+    <?php } ?>
+```
+
+![alt text](img/result2.PNG)
+
+
