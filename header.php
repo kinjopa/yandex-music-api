@@ -34,6 +34,10 @@
     <div class="header-blue">
         <nav class="navbar navbar-dark navbar-expand-md navigation-clean-search">
             <div class="container"><a class="navbar-brand" href="index.php">FREE MUSIC</a>
+                <?php if (!empty($_SESSION['logged_user'])) { ?>
+                    <a href="/wishlist"><i class="fa fa-heart" aria-hidden="true"
+                                           style="color: red;margin-right: 20px"></i></a>
+                <?php } ?>
                 <button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span
                             class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse"
@@ -44,11 +48,11 @@
                         </div>
                     </form>
                     <?php if (!empty($_SESSION['logged_user'])) { ?>
-                        <span class="navbar-text"> <a href="vendor/logout.php" class="login">выход</a></span>
+                        <span class="navbar-text"> <a href="vendor/logout.php" class="login">Выход</a></span>
                     <?php } else { ?>
                     <span class="navbar-text"> <a href="login.php" class="login">Вход</a></span>
                     <a class="btn btn-light action-button" role="button" href="signup.php">Регистрация</a></div>
-                <?php } ?>
+            <?php } ?>
             </div>
         </nav>
     </div>

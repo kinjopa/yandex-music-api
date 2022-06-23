@@ -5,7 +5,7 @@
 
 	if (isset($data['do_login']))
 	{
-		$user = R::findOne('users', 'login = ?', array($data['login']));
+		$user = R::findOne('users', 'email = ?', array($data['login']));
 		if ( $user )
 		{
 			//логин существует
@@ -13,7 +13,9 @@
 			{
 				//если пароль совпадает, то нужно авторизовать пользователя
 				$_SESSION['logged_user'] = $user;
-				echo '<div style="color:dreen;">Вы авторизованы!<br/> Можете перейти на <a href="/">главную</a> страницу.</div><hr>';
+                //НЕ БЕЗОПАСНО! Делается для теста
+                $_SESSION['pass'] = $data['password'];
+                header('Location: /');
 			}else
 			{
 				$errors[] = 'Неверно введен пароль!';
