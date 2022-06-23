@@ -1,1 +1,3 @@
+*.rb linguist-languag=php
+
 client/stylesheets/* linguist-vendored
