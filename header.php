@@ -35,7 +35,7 @@
         <nav class="navbar navbar-dark navbar-expand-md navigation-clean-search">
             <div class="container"><a class="navbar-brand" href="index.php">FREE MUSIC</a>
                 <?php if (!empty($_SESSION['logged_user'])) { ?>
-                    <a href="/wishlist"><i class="fa fa-heart" aria-hidden="true"
+                    <a href="/wishlist.php"><i class="fa fa-heart" aria-hidden="true"
                                            style="color: red;margin-right: 20px"></i></a>
                 <?php } ?>
                 <button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span
